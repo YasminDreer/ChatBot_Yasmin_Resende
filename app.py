@@ -28,6 +28,8 @@ def obter_resposta(texto: str) -> str:
         ('olá', 'boa tarde', 'bom dia'):  'Olá tudo bem!',
         'como estás':                      'Estou bem, obrigado!',
         ('bye', 'adeus', 'tchau'):         'Gostei de falar contigo! Até breve...',
+        'horas':                           f'São {datetime.now(): %H:%M} horas',
+        'data' :                            f'Hoje é dia: {datetime.now(): %d-%m-%Y}',                             
     }
 
     for chave, resposta in respostas.items():
@@ -48,6 +50,8 @@ def chat() -> None:
 
     while True:
         user_input: str = input('Tu: ')
+        resposta = obter_resposta (user_input)
+        print(f'Bot: {resposta}'),
 
         if resposta == 'Gostei de falar contigo! Até breve...':
             break
