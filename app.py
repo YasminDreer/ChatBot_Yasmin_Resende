@@ -21,21 +21,13 @@ def obter_resposta(texto: str) -> str:
     # if 'data' in comando:
     #     return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
 
-    # respostas com dicionário (linhas 24-37 descomentadas)
+def obter_resposta(texto: str) -> str:
+    comando: str = texto.lower()
+
     respostas = {
-        ('olá', 'boa tarde', 'bom dia'):        'Olá tudo bem!',
-        'como estás':                            'Estou bem, obrigado!',
-        'como te chamas?':                       'O meu nome é: Bot :)',
-        'tempo':                                 'Está um dia de sol!',
-        ('bye', 'adeus', 'tchau'):               'Gostei de falar contigo! Até breve...',
-        'horas':                                 f'São: {datetime.now():%H:%M} horas',
-        'data':                                  f'Hoje é dia: {datetime.now():%d-%m-%Y}',
-        # 5 novas interações
-        'qual é a tua cor favorita?':            'A minha cor favorita é o azul!',
-        ('obrigado', 'obrigada'):                'De nada, foi um prazer ajudar!',
-        'conta uma piada':                       'Por que o livro de matemática estava triste? Tinha muitos problemas!',
-        'qual é a capital de portugal?':         'A capital de Portugal é Lisboa!',
-        'ajuda':                                 'Podes perguntar-me: horas, data, tempo, como estás, ou simplesmente conversar!',
+        ('olá', 'boa tarde', 'bom dia'):  'Olá tudo bem!',
+        'como estás':                      'Estou bem, obrigado!',
+        ('bye', 'adeus', 'tchau'):         'Gostei de falar contigo! Até breve...',
     }
 
     for chave, resposta in respostas.items():
@@ -52,17 +44,16 @@ def chat() -> None:
     print('Bem-vindo ao ChatBot!')
     print('Escreva "bye" para sair do chat')
     name: str = input('Bot: Como te chamas? ')
-    print(f'Bot: Olá, {name}!\nComo te posso ajudar?')
+    print(f'Bot: Olá, {name}! \n Como te posso ajudar?')
 
     while True:
         user_input: str = input('Tu: ')
-        resposta = obter_resposta(user_input)  # bug corrigido
-        print(f'Bot: {resposta}')
 
         if resposta == 'Gostei de falar contigo! Até breve...':
             break
 
     print('Chat acabou')
+    print()
 
 
 def main() -> None:
