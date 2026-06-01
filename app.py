@@ -29,7 +29,9 @@ def obter_resposta(texto: str) -> str:
         'como estás':                      'Estou bem, obrigado!',
         ('bye', 'adeus', 'tchau'):         'Gostei de falar contigo! Até breve...',
         'horas':                           f'São {datetime.now(): %H:%M} horas',
-        'data' :                            f'Hoje é dia: {datetime.now(): %d-%m-%Y}',                             
+        'data' :                            f'Hoje é dia: {datetime.now(): %d-%m-%Y}',
+        'tempo':                            'Está um dia de sol',
+        'como te chamas':                    'O meu nome é Bot :)',          
     }
 
     for chave, resposta in respostas.items():
