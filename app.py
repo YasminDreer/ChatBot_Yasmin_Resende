@@ -31,7 +31,8 @@ def obter_resposta(texto: str) -> str:
         'horas':                           f'São {datetime.now(): %H:%M} horas',
         'data' :                            f'Hoje é dia: {datetime.now(): %d-%m-%Y}',
         'tempo':                            'Está um dia de sol',
-        'como te chamas':                    'O meu nome é Bot :)',          
+        'como te chamas':                    'O meu nome é Bot :)',     
+        'ajuda':                             'Podes perguntar: horas, data, tempo, como estás, e meu nome'
     }
 
     for chave, resposta in respostas.items():
